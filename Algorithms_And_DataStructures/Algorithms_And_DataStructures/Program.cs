@@ -14,10 +14,11 @@ namespace Algorithms_And_DataStructures
             var algo = new Algorithms();
             int[] sample = new[] {4, 8, 2, 1, 5, 7, 6, 3};
 
-            var pivotIndex = algo.pivot(sample, sample.Length + 1, 0);
-            Console.WriteLine(pivotIndex);
+            //var pivotIndex = algo.pivot(sample, 0, sample.Length + 1);
+            //Console.WriteLine(pivotIndex);
 
-
+            var quickSort = algo.QuickSort(sample, 0, sample.Length - 1);
+            printArray(quickSort);
 
             Console.ReadKey();
         }

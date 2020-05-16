@@ -11,9 +11,22 @@ namespace Algorithms_And_DataStructures
 {
     public class Algorithms
     {
-        public int pivot(int[] arr, int end, int start = 0)
+        public int[] QuickSort(int[] arr, int left, int right)
         {
-            end = end != 0 ? end : arr.Length + 1;
+            //var pivotIndex = pivot(arr, 0, arr.Length + 1);
+            var pivotIndex = pivot(arr, left, right);
+
+            if (left < right)
+            {
+
+                QuickSort(arr, left, pivotIndex - 1);
+                QuickSort(arr, pivotIndex + 1, right);
+            }
+
+            return arr;
+        }
+        public int pivot(int[] arr, int start, int end)
+        {
             var pivot = arr[start]; //actual value
             var swapIdx = start; // keep track of where we're putting the value we're going to move to
 
