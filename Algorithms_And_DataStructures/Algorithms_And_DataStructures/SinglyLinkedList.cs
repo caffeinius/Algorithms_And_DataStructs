@@ -23,7 +23,33 @@ namespace Algorithms_And_DataStructures
             this.tail = null;
         }
 
-        public SinglyLinkedList Push(string val)
+        public Node Get(int index)
+        {
+            if (index < 0 | index > this.length) return null;
+            var counter = 0;
+            var current = this.head;
+            while (counter != index)
+            {
+                current = current.next;
+                counter++;
+            }
+
+            return current;
+        }
+
+        public bool Set(int index, string val)
+        {
+            var foundNode = Get(index);
+            if (foundNode != null)
+            {
+                foundNode.val = val;
+                return true;
+            }
+
+            return false;
+        }
+
+        public void Push(string val)
         {
             var node = new Node(val);
             if (head == null)
@@ -39,7 +65,6 @@ namespace Algorithms_And_DataStructures
 
             length++;
 
-            return this;
         }
 
         //mainly an example 
@@ -53,9 +78,9 @@ namespace Algorithms_And_DataStructures
             }
         }
 
-        public SinglyLinkedList Pop()
+        public void Pop()
         {
-            if (length < 1 || this.head == null) return null;
+            if (length < 1 || this.head == null) return;
             Node currentNode = this.head;
             Node newTail = currentNode;
 
@@ -69,11 +94,9 @@ namespace Algorithms_And_DataStructures
             this.tail.next = null;
             length--;
 
-            if (length != 0) return this;
+            if (length != 0) return;
             this.head = null;
             this.tail = null;
-
-            return this;
         }
 
         public void Shift()

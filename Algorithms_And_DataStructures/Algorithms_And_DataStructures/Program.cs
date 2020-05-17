@@ -17,14 +17,9 @@ namespace Algorithms_And_DataStructures
            ssl.Push("goodbye");
            ssl.Traverse();
 
-           ssl.Shift();
+           ssl.Set(1, "Still here");
            ssl.Traverse();
 
-           ssl.Unshift("hola");
-           ssl.Traverse();
-
-           ssl.Unshift("konichwa");
-           ssl.Traverse();
 
             Console.ReadKey();
         }
