@@ -11,14 +11,16 @@ namespace Algorithms_And_DataStructures
     {
         static void Main(string[] args)
         {
-            var algo = new Algorithms();
-            int[] sample = new[] {4, 8, 2, 1, 5, 7, 6, 3};
+           SinglyLinkedList ssl = new SinglyLinkedList();
+           ssl.Push("hello");
+           ssl.Push("staying");
+           ssl.Push("goodbye");
+           ssl.Insert(3, "Still here");
+           ssl.Traverse();
 
-            //var pivotIndex = algo.pivot(sample, 0, sample.Length + 1);
-            //Console.WriteLine(pivotIndex);
+           ssl.Reverse();
+           ssl.Traverse();
 
-            var quickSort = algo.QuickSort(sample, 0, sample.Length - 1);
-            printArray(quickSort);
 
             Console.ReadKey();
         }
