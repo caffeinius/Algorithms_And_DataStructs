@@ -15,9 +15,10 @@ namespace Algorithms_And_DataStructures
            ssl.Push("hello");
            ssl.Push("staying");
            ssl.Push("goodbye");
+           ssl.Insert(3, "Still here");
            ssl.Traverse();
 
-           ssl.Set(1, "Still here");
+           ssl.Reverse();
            ssl.Traverse();
 
 

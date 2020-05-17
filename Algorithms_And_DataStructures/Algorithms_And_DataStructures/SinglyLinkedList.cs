@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,61 @@ namespace Algorithms_And_DataStructures
             this.length = 0;
             this.head = null;
             this.tail = null;
+        }
+
+        public void Reverse()
+        {
+            Node nextNode;
+            Node prevNode = null;
+
+            printNode(head, "current head");
+
+            Node currentNode = head;
+            this.head = this.tail;
+            this.tail = currentNode;
+
+            for (int i = 0; i < length; i++)
+            {
+                nextNode = currentNode.next;
+                currentNode.next = prevNode;
+                prevNode = currentNode;
+                currentNode = nextNode;
+            }
+        }
+
+        public void Remove(int index)
+        {
+            if (index < 0 || index > length) return;
+            if (index == 0) Shift();
+            if (index == length - 1) Pop();
+            var prev = Get(index - 1);
+            var removed = prev.next;
+            prev.next = removed.next;
+            length--;
+        }
+
+        public bool Insert(int index, string val)
+        {
+            if (index < 0 || index > length) return false;
+            if (index == length)
+            {
+                Push(val);
+                return true;
+            }
+            if (index == 0)
+            {
+                this.Unshift(val);
+                return true;
+            }
+
+            var prev = this.Get(index - 1); //previous
+            var newNode = new Node(val);
+            newNode.next = prev.next;
+            prev.next = newNode;
+            length++;
+
+
+            return true;
         }
 
         public Node Get(int index)
@@ -121,6 +177,13 @@ namespace Algorithms_And_DataStructures
                 this.head = newNode;
             }
             length++;
+        }
+
+        private void printNode(Node n, string nodeName)
+        {
+            Debug.WriteLineIf(string.IsNullOrEmpty(nodeName), $"{nodeName}::");
+            Debug.WriteLine($"current val{n.val}");
+            Debug.WriteLine($"next val{n.next.val}");
         }
     }
 }
