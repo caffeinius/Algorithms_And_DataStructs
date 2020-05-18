@@ -51,6 +51,8 @@
     <Compile Include="Queue.cs" />
     <Compile Include="SinglyLinkedList.cs" />
     <Compile Include="Stack.cs" />
+    <Compile Include="Trees\BinarySearchTree.cs" />
+    <Compile Include="Trees\Node.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
