@@ -20,6 +20,89 @@ namespace Algorithms_And_DataStructures
             length = 0;
         }
 
+        public Node Remove(int index)
+        {
+            if (index < 0 | index >= length) return null;
+            if (index == 0) return this.Shift();
+            if (index == length - 1) return this.Pop();
+            var removedNode = Get(index);
+            var beforeNode = removedNode.prev;
+            var afterNode = removedNode.next;
+            beforeNode.next = afterNode;
+            afterNode.prev = beforeNode;
+            removedNode.next = null;
+            removedNode.prev = null;
+            length--;
+            return removedNode;
+        }
+
+        public bool Insert(int index, string val)
+        {
+            if (index < 0 || index > length) return false;
+            if (index == 0)
+            {
+                this.Unshift(val);
+            }
+
+            if (index == length)
+            {
+                this.Push(val);
+            }
+
+            var newNode = new Node(val);
+            var beforeNode = Get(index - 1);
+            var afterNode = beforeNode.next;
+
+            beforeNode.next = newNode; newNode.prev = beforeNode;
+            newNode.next = afterNode; afterNode.prev = newNode;
+            length++;
+            return true;
+        }
+
+        public bool Set(int index, string val)
+        {
+            var foundNode = Get(index);
+            if (foundNode != null)
+            {
+                foundNode.val = val;
+                return true;
+            }
+            return false;
+        }
+
+        public Node Get(int index)
+        {
+            if (index < 0 || index >= length) return null;
+
+            int count;
+            Node current = null;
+            if (index <= length / 2)
+            {
+                Debug.WriteLine("Working from start");
+                count = 0;
+                current = head;
+                while (count != index)
+                {
+                    current = current.next;
+                    count++;
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Working from end");
+                count = length - 1;
+                current = tail;
+                while (count != index)
+                {
+                    current = current.prev;
+                    count--;
+                }
+            }
+
+            return current;
+
+        }
+
         public Node Shift()
         {
             if (head == null || length == 0) return null;

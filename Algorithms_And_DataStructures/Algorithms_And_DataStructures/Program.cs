@@ -16,12 +16,14 @@ namespace Algorithms_And_DataStructures
             dll.Push("Ron");
             dll.Push("Hermione");
             
-            Debug.WriteLine(dll.head.val);
-            dll.Shift();
-            Debug.WriteLine(dll.head.val);
-            dll.Unshift("Hagrid");
-            Debug.WriteLine(dll.head.val);
-            //Debug.WriteLine(dll.Pop().val);
+            //Debug.WriteLine(dll.head.val);
+            //dll.Shift();
+            //Debug.WriteLine(dll.head.val);
+            //dll.Unshift("Hagrid");
+            //Debug.WriteLine(dll.head.val);
+
+
+            Debug.WriteLine(dll.Remove(0).val);
 
 
             //SinglyLinkedList ssl = new SinglyLinkedList();
