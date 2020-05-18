@@ -20,6 +20,45 @@ namespace Algorithms_And_DataStructures
             length = 0;
         }
 
+        public Node Shift()
+        {
+            if (head == null || length == 0) return null;
+            var oldHead = head;
+            if (this.length == 1)
+            {
+                head = null;
+                tail = null;
+            }
+            else
+            {
+                head = oldHead.next;
+                head.prev = null;
+                oldHead.next = null;
+            }
+
+            length--;
+            return oldHead;
+        }
+
+        public DoublyLinkedList Unshift(string val)
+        {
+            var newNode = new Node(val);
+            if (this.length == 0)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                head.prev = newNode;
+                newNode.next = head;
+                head = newNode;
+            }
+
+            length++;
+            return this;
+        }
+
         public Node Pop()
         {
             if (head == null) return null;

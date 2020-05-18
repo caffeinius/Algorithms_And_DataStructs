@@ -12,13 +12,15 @@ namespace Algorithms_And_DataStructures
         static void Main(string[] args)
         {
             DoublyLinkedList dll = new DoublyLinkedList();
-            dll.Push("hello");
+            dll.Push("Harry");
+            dll.Push("Ron");
+            dll.Push("Hermione");
+            
             Debug.WriteLine(dll.head.val);
-            Debug.WriteLine(dll.tail.val);
-            dll.Push("good bye");
+            dll.Shift();
             Debug.WriteLine(dll.head.val);
-            Debug.WriteLine(dll.tail.val);
-            dll.Pop();
+            dll.Unshift("Hagrid");
+            Debug.WriteLine(dll.head.val);
             //Debug.WriteLine(dll.Pop().val);
 
 
