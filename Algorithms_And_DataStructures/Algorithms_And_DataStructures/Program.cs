@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms_And_DataStructures.Trees;
 
 namespace Algorithms_And_DataStructures
 {
@@ -11,20 +12,17 @@ namespace Algorithms_And_DataStructures
     {
         static void Main(string[] args)
         {
-            //Stack stack = new Stack();
-            //stack.Push("first");
-            //stack.Push("second");
-            //stack.Push("third");
-            //stack.Pop();
-            //stack.Pop();
+            var bst = new BinarySearchTree();
+            Console.WriteLine($"root:{bst.Insert(10).root.value}");
+            bst.Insert(5);
+            bst.Insert(13);
+            bst.Insert(11);
+            bst.Insert(2);
+            //Console.WriteLine($"left:{bst.root.left.value}");
+            //Console.WriteLine($"right:{bst.root.right.value}");
 
-            Queue q = new Queue();
-            q.Enqueue("first");
-            q.Enqueue("second");
-            q.Enqueue("third");
-            q.Dequeue();
-            q.Dequeue();
-            q.Dequeue();
+            //Console.WriteLine($"left:{bst.Insert(10).root.left.value}");
+            //Console.WriteLine($"right:{bst.Insert(10).root.right.value}");
 
             Console.ReadKey();
 
