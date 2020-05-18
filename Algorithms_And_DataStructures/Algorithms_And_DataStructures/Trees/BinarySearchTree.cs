@@ -16,6 +16,31 @@ namespace Algorithms_And_DataStructures.Trees
             root = null;
         }
 
+        public bool Find(int val)
+        {
+            if (root == null) return false;
+            var current = root;
+            var found = false;
+
+            while (!found && current != null)
+            {
+                if (val < (int)current.value)
+                {
+                    current = current.left;
+                }
+                else if (val > (int)current.value)
+                {
+                    current = current.right;
+                }
+                else
+                {
+                    found = true;
+                }
+            }
+
+            return found;
+        }
+
         public BinarySearchTree Insert(int val)
         {
             Node newNode = new Node(val);
@@ -54,9 +79,9 @@ namespace Algorithms_And_DataStructures.Trees
                         }
                     }
                 }
+                return this;
             }
 
-            return this;
         }
     }
 }
