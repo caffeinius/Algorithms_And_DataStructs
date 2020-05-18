@@ -11,31 +11,20 @@ namespace Algorithms_And_DataStructures
     {
         static void Main(string[] args)
         {
-            DoublyLinkedList dll = new DoublyLinkedList();
-            dll.Push("Harry");
-            dll.Push("Ron");
-            dll.Push("Hermione");
-            
-            //Debug.WriteLine(dll.head.val);
-            //dll.Shift();
-            //Debug.WriteLine(dll.head.val);
-            //dll.Unshift("Hagrid");
-            //Debug.WriteLine(dll.head.val);
+            //Stack stack = new Stack();
+            //stack.Push("first");
+            //stack.Push("second");
+            //stack.Push("third");
+            //stack.Pop();
+            //stack.Pop();
 
-
-            Debug.WriteLine(dll.Remove(0).val);
-
-
-            //SinglyLinkedList ssl = new SinglyLinkedList();
-            //ssl.Push("hello");
-            //ssl.Push("staying");
-            //ssl.Push("goodbye");
-            //ssl.Insert(3, "Still here");
-            //ssl.Traverse();
-
-            //ssl.Reverse();
-            //ssl.Traverse();
-
+            Queue q = new Queue();
+            q.Enqueue("first");
+            q.Enqueue("second");
+            q.Enqueue("third");
+            q.Dequeue();
+            q.Dequeue();
+            q.Dequeue();
 
             Console.ReadKey();
 
