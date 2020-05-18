@@ -11,18 +11,35 @@ namespace Algorithms_And_DataStructures
     {
         static void Main(string[] args)
         {
-           SinglyLinkedList ssl = new SinglyLinkedList();
-           ssl.Push("hello");
-           ssl.Push("staying");
-           ssl.Push("goodbye");
-           ssl.Insert(3, "Still here");
-           ssl.Traverse();
+            DoublyLinkedList dll = new DoublyLinkedList();
+            dll.Push("Harry");
+            dll.Push("Ron");
+            dll.Push("Hermione");
+            
+            //Debug.WriteLine(dll.head.val);
+            //dll.Shift();
+            //Debug.WriteLine(dll.head.val);
+            //dll.Unshift("Hagrid");
+            //Debug.WriteLine(dll.head.val);
 
-           ssl.Reverse();
-           ssl.Traverse();
+
+            Debug.WriteLine(dll.Remove(0).val);
+
+
+            //SinglyLinkedList ssl = new SinglyLinkedList();
+            //ssl.Push("hello");
+            //ssl.Push("staying");
+            //ssl.Push("goodbye");
+            //ssl.Insert(3, "Still here");
+            //ssl.Traverse();
+
+            //ssl.Reverse();
+            //ssl.Traverse();
 
 
             Console.ReadKey();
+
+
         }
 
         static void printArray(int[] arr)
